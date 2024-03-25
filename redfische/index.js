@@ -47,7 +47,7 @@ jQuery(document).ready(function() {
               'id': 'stripe-checkout-button',
               'text': 'Checkout',
               'href': 'javascript:void(0);',
-              'style': 'padding: 10px 30px 10px 30px; font-weight: bold; font-size: 2em; color: white: background-color: black;',
+              'style': 'padding: 10px 30px 10px 30px; font-weight: bold; font-size: 2em; color: white; background-color: black;',
             }).appendTo(productDetailsContainer);
 
 
