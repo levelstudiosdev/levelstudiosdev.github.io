@@ -35,11 +35,12 @@ jQuery(document).ready(function() {
             
             jQuery('<div>', {
               'id': 'unit-dropdown-container',
-              'style': 'text-align: center;',
+              'style': 'text-align: center; font-size: 2em;',
             }).appendTo(productDetailsContainer);
 
+            var unitDropdownContainer = jQuery("#unit-dropdown-container");
             if (!response.length) {
-              jQuery("#unit-dropdown-container").html("Out of Inventory");
+              unitDropdownContainer.html("Out of Inventory");
               return;
             }
 
@@ -78,11 +79,11 @@ jQuery(document).ready(function() {
 
             // Append select to #apiResponse
             // console.log(jQuery('#unit-dropdown-container'));
-            jQuery('#unit-dropdown-container').appendTo(select);
+            select.appendTo(unitDropdownContainer);
             // var shopifyCheckoutButton = jQuery("#stripe-checkout-button");
 
             // Event listener for dropdown change
-            jQuery('#unit-dropdown-container').on('change', '#unitDropdown', function() {
+            unitDropdownContainer.on('change', '#unitDropdown', function() {
                 var selectedOption = jQuery(this).find('option:selected');
                 console.log('change in #unitDropdown ' + selectedOption.val());
                 var location = selectedOption.data('location');
