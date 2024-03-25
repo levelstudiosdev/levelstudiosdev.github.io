@@ -44,10 +44,9 @@ jQuery(document).ready(function() {
               return;
             }
 
-            jQuery('<a>', {
+            jQuery('<button>', {
               'id': 'stripe-checkout-button',
               'text': 'Checkout',
-              'href': 'javascript:void(0);',
               'style': 'padding: 10px 30px 10px 30px; font-weight: bold; font-size: 2em; color: white; background-color: black;',
             }).appendTo(productDetailsContainer);
 
@@ -57,7 +56,8 @@ jQuery(document).ready(function() {
 
             // Create select element
             var select = jQuery('<select>', {
-                id: 'unitDropdown'
+                'id': 'unitDropdown',
+                'style': 'padding: 10px 30px 10px 30px; font-weight: bold; font-size: 2em; color: white; background-color: black;',
             });
 
             // Add "Choose" option
