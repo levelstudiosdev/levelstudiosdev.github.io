@@ -44,21 +44,12 @@ jQuery(document).ready(function() {
               return;
             }
 
-            jQuery('<button>', {
-              'id': 'stripe-checkout-button',
-              'text': 'Checkout',
-              'disabled': true,
-              'style': 'padding: 10px 30px 10px 30px; font-weight: bold; font-size: 2em; color: white; background-color: black;',
-            }).appendTo(productDetailsContainer);
-
-
-
             // jQuery('#unit-dropdown-container').empty();
 
             // Create select element
             var select = jQuery('<select>', {
                 'id': 'unitDropdown',
-                'style': 'padding: 10px 30px 10px 30px; font-weight: bold; font-size: 2em; color: white; background-color: black;',
+                'style': 'padding: 10px 30px 10px 30px; font-weight: bold; font-size: 1em; color: white; background-color: black;',
             });
 
             // Add "Choose" option
@@ -83,6 +74,13 @@ jQuery(document).ready(function() {
             select.appendTo(unitDropdownContainer);
             // var shopifyCheckoutButton = jQuery("#stripe-checkout-button");
 
+            jQuery('<button>', {
+              'id': 'stripe-checkout-button',
+              'text': 'Checkout',
+              'disabled': true,
+              'style': 'margin-left: 10px; padding: 10px 30px 10px 30px; font-weight: bold; font-size: 2em; color: white; background-color: black;',
+            }).appendTo(unitDropdownContainer);
+
             // Event listener for dropdown change
             unitDropdownContainer.on('change', '#unitDropdown', function() {
                 var selectedOption = jQuery(this).find('option:selected');
@@ -103,12 +101,12 @@ jQuery(document).ready(function() {
 
             jQuery('#stripe-checkout-button').on('click', function() {
                 var selectedOption = jQuery('#unitDropdown').find('option:selected');
-                var location = selectedOption.data('location');
+                
                 var checkoutLink = selectedOption.data('stripe-checkout-link');
                 
                 console.log('Checkout Link:', checkoutLink);
 
-                window.location.replace(checkoutLink);
+                window.location.href(checkoutLink);
             });
         },
         error: function(xhr, status, error) {
