@@ -45,7 +45,7 @@ jQuery(document).ready(function() {
 
             jQuery('<a>', {
               'id': 'stripe-checkout-button',
-              'text': '<span class="l7_2fn">Checkout</span>',
+              'text': 'Checkout',
               'disabled': true,
               'href': 'javascript:void(0);',
               'class': 'uDW_Qe',
