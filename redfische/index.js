@@ -12,11 +12,11 @@ jQuery(document).ready(function() {
     var wixProductSlug = urlParts[urlParts.length -1];
 
     if (!productPageSlugs.includes(wixProductSlug)) {
-      console.log("page is not a product page");
+      // console.log("page is not a product page");
       return;
     }
 
-    console.log("Product Page " + wixProductSlug);
+    // console.log("Product Page " + wixProductSlug);
 
     // var wixProductSlug = jQuery("#wix-product-slug").val();
     // API endpoint URL
@@ -28,7 +28,7 @@ jQuery(document).ready(function() {
         type: 'GET',
         dataType: 'json',
         success: function(response) {
-            console.log(response);
+            // console.log(response);
             // Clear existing dropdown options
             var productDetailsContainer = jQuery("h2:contains(SELECT YOUR UNIT BELOW)").parent().next();
             productDetailsContainer.empty();
@@ -84,7 +84,7 @@ jQuery(document).ready(function() {
             // Event listener for dropdown change
             unitDropdownContainer.on('change', '#unitDropdown', function() {
                 var selectedOption = jQuery(this).find('option:selected');
-                console.log('change in #unitDropdown ' + selectedOption.val());
+                // console.log('change in #unitDropdown ' + selectedOption.val());
                 var location = selectedOption.data('location');
                 var checkoutLink = selectedOption.data('stripe-checkout-link');
                 
@@ -104,14 +104,14 @@ jQuery(document).ready(function() {
                 
                 var checkoutLink = selectedOption.data('stripe-checkout-link');
                 
-                console.log('Checkout Link:', checkoutLink);
+                // console.log('Checkout Link:', checkoutLink);
 
                 window.location.href = checkoutLink;
             });
         },
         error: function(xhr, status, error) {
             // Handle error
-            console.error("Error:", error);
+            // console.error("Error:", error);
             // jQuery('#apiResponse').text("Error fetching data from the API.");
         }
     });
