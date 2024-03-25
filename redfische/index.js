@@ -106,7 +106,7 @@ jQuery(document).ready(function() {
                 
                 console.log('Checkout Link:', checkoutLink);
 
-                window.location.href(checkoutLink);
+                window.location.href = checkoutLink;
             });
         },
         error: function(xhr, status, error) {
