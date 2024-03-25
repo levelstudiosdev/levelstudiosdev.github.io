@@ -38,10 +38,10 @@ jQuery(document).ready(function() {
               'style': 'text-align: center;',
             }).appendTo(productDetailsContainer);
 
-            // if (!response.length) {
-            //   jQuery("#unit-dropdown-container").html("Out of Inventory");
-            //   return;
-            // }
+            if (!response.length) {
+              jQuery("#unit-dropdown-container").html("Out of Inventory");
+              return;
+            }
 
             jQuery('<a>', {
               'id': 'stripe-checkout-button',
