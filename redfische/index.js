@@ -78,7 +78,7 @@ jQuery(document).ready(function() {
               'id': 'stripe-checkout-button',
               'text': 'Checkout',
               'disabled': true,
-              'style': 'margin-left: 10px; padding: 10px 30px 10px 30px; font-weight: bold; font-size: 2em; color: white; background-color: black;',
+              'style': 'margin-left: 10px; padding: 10px 30px 10px 30px; font-weight: bold; font-size: 1em; color: white; background-color: black;',
             }).appendTo(unitDropdownContainer);
 
             // Event listener for dropdown change
